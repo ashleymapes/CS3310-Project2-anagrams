@@ -1,0 +1,18 @@
+What is the theoretical worst-case running time of the algorithm you implemented
+ (i.e. in Θ-notation), expressed in terms of the number of words n in the input
+ f
+ ile? Justify your answer.
+
+ # Theoretical Worst-Case Running Time of the Algorithm
+ The algorithm uses presorting to find anagram sets efficiently.
+ The worst-case time complexity is O(nlogn)
+
+**Reasoning:**
+The program's efficiency mainly depends on the sorting and insertion operations
+- The algorithm first reads the input file and takes each word in one by one.
+- Each word is then sorted using Arrays.sort() which has a time complexity of O(mlogm) given that m is the number of characters in the word.
+- The algorithm then uses a HashMap to store the sorted words as a key and their original word into a set value.
+- Each insertion into the HashMap takes O(1) time, so adding each word to the HashMap takes O(n)
+- The sorting and adding of each word to the HashMap takes O(n*mlogm) time in total, given that n is the number of words in the input and m and the number of characters in each word.
+
+
