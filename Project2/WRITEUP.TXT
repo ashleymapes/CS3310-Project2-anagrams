@@ -8,6 +8,7 @@ What is the theoretical worst-case running time of the algorithm you implemented
  The worst-case time complexity is O(nlogn)
 
 **Reasoning:**
+------------------------
 The program's efficiency mainly depends on the sorting and insertion operations
 - The algorithm first reads the input file and takes each word in one by one.
 - Each word is then sorted using Arrays.sort() which has a time complexity of O(mlogm) given that m is the number of characters in the word.
