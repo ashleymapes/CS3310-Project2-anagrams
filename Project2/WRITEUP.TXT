@@ -15,4 +15,7 @@ The program's efficiency mainly depends on the sorting and insertion operations
 - Each insertion into the HashMap takes O(1) time, so adding each word to the HashMap takes O(n)
 - The sorting and adding of each word to the HashMap takes O(n*mlogm) time in total, given that n is the number of words in the input and m and the number of characters in each word.
 
+The printing and writing of the anagram sets takes O(n) time, as each word is printed once. This does not affect the time complexity of the algorithm of the algorithm, as it is dominated by the sorting and adding of each word to the HashMap.
+Additionally, the removal of anagram sets with less than 2 words takes O(n) time, as each word is checked once.
 
+The whole program's time complexity is still therefore O(n*mlogm)

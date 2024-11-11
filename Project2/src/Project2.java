@@ -24,6 +24,7 @@ public class Project2 {
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
 
+        // create hashmap to store anagrams
         HashMap<String, HashSet<String>> anagrams = new HashMap<>();
 
         // ask user for file path
@@ -31,13 +32,16 @@ public class Project2 {
         String filePath = scanner.nextLine();
         scanner.close();
 
-        
+        // read file and perform anagram analysis
         processFile(filePath, anagrams);
+
+        // remove sets that only contain one word
         cleanHashMap(anagrams);
         
+        // write to output file
         writeAnagramSetsToFile(anagrams, "output.txt");
 
-        
+        // print to terminal
         printAnagramSets(anagrams);
     }
 
@@ -74,7 +78,7 @@ public class Project2 {
         // print header
         System.out.println("List of anagrams:");
 
-        // print out list of anagrams  with more than 1 word
+        // print out list of anagrams and the total number of anagram sets
         anagrams.forEach((key, value) -> System.out.println(value));
         System.out.println();
         System.out.println("Number of anagram sets: " + anagrams.size());
@@ -94,10 +98,8 @@ public class Project2 {
 
             // Write each set of anagrams with more than one word
             for (HashSet<String> set : anagrams.values()) {
-                if (set.size() > 1) {
                     writer.write(set.toString());
                     writer.newLine();
-                }
             }
             
             // Write the total number of anagram sets
